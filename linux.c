@@ -115,6 +115,12 @@
 		samba：win和linux共享文件的软件  sudo apt-get install samba
 		
 	}
+	{source命令
+		source命令也称为“点命令”，也就是一个点符号（.）。
+		source命令通常用于重新执行刚修改的初始化文件，使之立即生效，
+		而不必注销并重新登录。
+		
+	}
 }
 {SCONS构建编译环境
 	
