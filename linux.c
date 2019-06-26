@@ -27,7 +27,7 @@
 		rt_thread:运行这个时u_boot就没用了，所以DDR空间有重合，rt_thread:a0000000-a1800000,
 				  u_boot:a0800000-.......
 		函数流程:
-				  [u_boot]start.s(fh8632)->start_armboot(board.c)->main_loop()->
+				  [u_boot]start.s(fh8632)->start_armboot(board.c-init_sequence(初始化队列))->main_loop()->
 				  sf probe 0;sf read a0000000 80000 180000;go a0000000->[core.bin]->
 				  start_gcc.S(startup/gcc)->rtthread_startup(汇编直接调用)->系统板级初始化
 				  ->系统任务初始化->app任务初始化->开启任务调度，交由rt_thread os;
@@ -109,10 +109,12 @@
 			-O：将文件解开到标准输出 
 	}
 	{文本命令grep 2019-1-22
+		grep " " -nR ./
 		
 	}
 	{linux中的一些软件
 		samba：win和linux共享文件的软件  sudo apt-get install samba
+		xshell:是一个轻量的shell工具，可以用来连接ubuntu，登陆操作。
 		
 	}
 	{source命令
